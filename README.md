@@ -16,8 +16,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-- [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
+ - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
   - [Install](#install)
@@ -33,9 +32,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Book Lover's reading list] <a name="about-project"></a>
+# 📖 Awesome books <a name="about-project"></a>
 
-**Book Lover's reading list** is a starting project to test linters and core files like gitignore with GitHub, HTML, CSS, and Javascript
+**Awesome books** is a starting project to test linters and core files like gitignore with GitHub, HTML, CSS, and Javascript
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -54,7 +53,7 @@
   </ul>
 </details>
 <details>
-<summary>Languages</summary>
+<summary>Technogies</summary>
 <ul>
    <li>HTML</li>
    <li>CSS</li>
@@ -133,7 +132,7 @@ Use your browser's developer tools
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Estete9/hello-microverse/issues).
+Feel free to check the [issues page](https://github.com/gilberthappi/Awesome-books/issues).
 
 <!-- SUPPORT -->
 

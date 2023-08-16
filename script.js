@@ -1,21 +1,4 @@
-//  add Some Books Data
-const booksData = [
-  {
-    title: 'The Art of Exploitation',
-    author: 'Jon Erickson',
-    id: 0,
-  },
-  {
-    title: 'Rich Dad Poor Dad',
-    author: 'Robert T. Kiyosaki',
-    id: 1,
-  },
-  {
-    title: 'Hacking: The Art of Exploitation',
-    author: 'Jon Erickson',
-    id: 2,
-  },
-];
+const booksData = [];
 
 function createBook(book) {
   const booksCont = document.getElementById('booksCont');
