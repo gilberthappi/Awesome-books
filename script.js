@@ -30,4 +30,18 @@ class Book {
     });
     booksCont.append(bookDiv);
   }
-//Add code here
+
+  remove() {
+    const bookDiv = document.getElementById(`book-${this.id}`);
+    bookDiv.parentElement.removeChild(bookDiv);
+    let storedData = JSON.parse(localStorage.getItem('storedData'));
+    storedData = storedData.filter((bookobj) => {
+      if (bookobj.id === this.id) {
+        return false;
+      }
+      return true;
+    });
+    localStorage.setItem('storedData', JSON.stringify(storedData));
+  }
+}
+// Add code here
