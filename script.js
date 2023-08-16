@@ -1,5 +1,16 @@
 const booksData = [];
 
+function removebook(bookId) {
+  let storedData = JSON.parse(localStorage.getItem('storedData'));
+  storedData = storedData.filter((bookobj) => {
+    if (bookobj.id.toString() === bookId) {
+      return false;
+    }
+    return true;
+  });
+  localStorage.setItem('storedData', JSON.stringify(storedData));
+}
+
 function createBook(book) {
   const booksCont = document.getElementById('booksCont');
   const bookDiv = document.createElement('div');
@@ -15,14 +26,8 @@ function createBook(book) {
   bookDiv.querySelector('.removeBtn').addEventListener('click', (event) => {
     const book = document.getElementById(event.target.parentElement.id);
     book.parentElement.removeChild(book);
-    let storedData = JSON.parse(localStorage.getItem('storedData'));
-    storedData = storedData.filter((bookobj) => {
-      if (bookobj.id.toString() === book.id.substring(5, book.id.length)) {
-        return false;
-      }
-      return true;
-    });
-    localStorage.setItem('storedData', JSON.stringify(storedData));
+    const bookId = book.id.substring(5, book.id.length);
+    removebook(bookId);
   });
   booksCont.append(bookDiv);
 }
