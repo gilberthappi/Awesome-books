@@ -18,11 +18,11 @@
   border-style: solid;
 }
 
-.booksCont > :nth-child(even) {
+.booksCont> :nth-child(even) {
   background-color: darkgrey;
 }
 
-.booksCont > :nth-child(odd) {
+.booksCont> :nth-child(odd) {
   background-color: lightgrey;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .removeBtn {
-  box-shadow:  2px 3px 0px 0;
+  box-shadow: 2px 3px 0px 0;
   padding: 2px;
   font-size: 0.9em;
   font-weight: bold;
@@ -59,7 +59,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;  
+  gap: 10px;
 }
 
 input {
@@ -73,5 +73,5 @@ input {
   font-weight: bold;
   margin-left: auto;
   border-style: solid;
-  box-shadow:  2px 3px 0px 0;
+  box-shadow: 2px 3px 0px 0;
 }
