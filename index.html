@@ -1,32 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./home.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-    rel="stylesheet">
-  <title>Awesome Books</title>
-</head>
-
-<body>
-  <div class="container">
-    <h1>Awesome Books</h1>
-    <div class="booksCont" id="booksCont">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"></script>
+    <title>Awesome Books</title>
+  </head>
+  <body>
+    <header>
+      <nav id="mainNav">
+        <a class="logo" href="index.html">
+          <i class="fas fa-book-reader fa-lg"></i> Awesome Books</a
+        >
+        <ul class="navLinks">
+          <li class="navLink">
+            <a id="bookListBtn" href="#bookList">Book List</a>
+          </li>
+          <li class="navLink">
+            <a id="addBookBtn" href="#addBook">Add Book</a>
+          </li>
+          <li class="navLink">
+            <a id="contactBtn" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="dateAndTime" id="dateAndTime">sdf</div>
+    </header>
+    <div class="bodyContainer">
+      <section id="bookList">
+        <div class="container">
+          <h2><i class="fas fa-book fa-lg"></i> Book List</h2>
+          <div class="booksCont" id="booksCont"></div>
+        </div>
+      </section>
+      <section id="addBook">
+        <div class="container addBook">
+          <h2><i class="fas fa-book-medical fa-lg"></i> Add a new Book</h2>
+          <input type="text" id="title" placeholder="Add Book Title" required />
+          <input
+            type="text"
+            id="author"
+            placeholder="Add Book Author"
+            required
+          />
+          <button type="submit" id="addBtn">Add</button>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2><i class="fas fa-address-book fa-lg"></i> Contact Information</h2>
+          <div class="contactInfo">
+            <h4>
+              Do you have any questions or want to say "Hello"?<br />You can
+              reach out to us:
+            </h4>
+            <ul>
+              <li>
+                Our e-mail:
+                <a href="mailto:gdushimimana6@gmail.com"
+                  >Email</a
+                >
+              </li>
+              <li>
+                Our phone number:
+                <i class="fab fa-whatsapp"></i>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=%2B201114277131&text&app_absent=0"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >+250784600762</a
+                >
+              </li>
+              <li>
+                Our address: <i class="fas fa-map-marker-alt"></i>
+                <a
+                  href="https://goo.gl/maps/a5axKGRC7WHKhkq1A"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Kigali, Rwanda</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
-    <div class="addBook">
-      <input type="text" id="title" placeholder="Add Book Title" required>
-      <input type="text" id="author" placeholder="Add Book Author" required>
-      <button type="submit" id="addBtn">Add</button>
-    </div>
-  </div>
-  <script src="./script.js"></script>
-</body>
-
+    <footer>
+      <p>
+        Copyright
+        <a class="footerLink" href="mailto:gdushimimana6@gmail.com"
+          >Gilbert happi</a
+        >
+        &copy;2021
+      </p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>

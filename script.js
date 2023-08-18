@@ -11,10 +11,10 @@ class Book {
     bookDiv.className = 'book';
     bookDiv.id = `book-${this.id}`;
     const bookElement = `
-        <h4 class="bookTitle">${this.title}</h4>
-        <p class="bookAuthor">${this.author}</p>
-        <button class="removeBtn">Remove</button>
-      `;
+          <h4 class="bookTitle">"${this.title}"</h4>
+          <p class="bookAuthor">By: ${this.author}</p>
+          <button class="removeBtn">Remove</button>
+        `;
     bookDiv.innerHTML += bookElement;
     const inputData = {
       title: this.title,
@@ -43,22 +43,67 @@ class Book {
     localStorage.setItem('storedData', JSON.stringify(storedData));
   }
 }
-
 const initialLoad = () => {
-  const storedData = JSON.parse(localStorage.getItem('storedData')) || [];
+  const storedData = JSON.parse(localStorage.getItem('storedData'));
   if (storedData) {
     storedData.forEach((book) => {
       const newBook = new Book(book.title, book.author, book.id);
       newBook.add();
     });
+  } else {
+    const data = [
+      {
+        title: 'The Lord of the Rings',
+        author: 'J.R.R. Tolkien',
+      },
+      {
+        title: 'Harry Potter',
+        author: 'J.K. Rowling',
+      },
+      {
+        title: 'Rich Dad Poor Dad',
+        author: 'Robert Kiyosaki',
+      },
+    ];
+    localStorage.setItem('storedData', JSON.stringify(data));
   }
-  localStorage.setItem('storedData', JSON.stringify(storedData));
   const addBtn = document.getElementById('addBtn');
   addBtn.addEventListener('click', () => {
     const bookTitle = document.getElementById('title').value;
     const bookAuthor = document.getElementById('author').value;
     const book = new Book(bookTitle, bookAuthor);
     book.add();
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
   });
+
+  const bookListBtn = document.getElementById('bookListBtn');
+  const addBookBtn = document.getElementById('addBookBtn');
+  const contactBtn = document.getElementById('contactBtn');
+  const bookList = document.getElementById('bookList');
+  const addBook = document.getElementById('addBook');
+  const contact = document.getElementById('contact');
+
+  bookListBtn.addEventListener('click', () => {
+    bookList.style.display = 'block';
+    addBook.style.display = 'none';
+    contact.style.display = 'none';
+  });
+
+  addBookBtn.addEventListener('click', () => {
+    addBook.style.display = 'block';
+    bookList.style.display = 'none';
+    contact.style.display = 'none';
+  });
+
+  contactBtn.addEventListener('click', () => {
+    contact.style.display = 'block';
+    bookList.style.display = 'none';
+    addBook.style.display = 'none';
+  });
+
+  const dateAndTime = document.getElementById('dateAndTime');
+  dateAndTime.innerHTML = window.luxon.DateTime.local().toFormat('dd LLL, yyyy | t');
 };
+
 initialLoad();
