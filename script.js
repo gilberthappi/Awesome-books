@@ -62,4 +62,4 @@ const initialLoad = () => {
     book.add();
   });
 };
-initialLoad()
+initialLoad();
