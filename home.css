@@ -18,11 +18,11 @@
   border-style: solid;
 }
 
-.booksCont> :nth-child(even) {
+.booksCont > :nth-child(even) {
   background-color: darkgrey;
 }
 
-.booksCont> :nth-child(odd) {
+.booksCont > :nth-child(odd) {
   background-color: lightgrey;
 }
 
@@ -72,5 +72,5 @@ input {
   font-weight: bold;
   margin-left: auto;
   border-style: solid;
-  box-shadow: 2px 3px 0px 0;
+  box-shadow: 2px 3px;
 }
