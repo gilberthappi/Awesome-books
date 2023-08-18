@@ -4,17 +4,15 @@ class Book {
     this.author = author;
     this.id = id;
   }
-
   add() {
     const booksCont = document.getElementById('booksCont');
     const bookDiv = document.createElement('div');
     bookDiv.className = 'book';
     bookDiv.id = `book-${this.id}`;
     const bookElement = `
-        <h4 class="bookTitle">${this.title}</h4>
-        <p class="bookAuthor">${this.author}</p>
+        <h4 class="bookTitle">"${this.title}"</h4>
+        <p class="bookAuthor">By: ${this.author}</p>
         <button class="removeBtn">Remove</button>
-        <hr>
       `;
     bookDiv.innerHTML += bookElement;
     const inputData = {
@@ -30,7 +28,6 @@ class Book {
     });
     booksCont.append(bookDiv);
   }
-
   remove() {
     const bookDiv = document.getElementById(`book-${this.id}`);
     bookDiv.parentElement.removeChild(bookDiv);
@@ -44,22 +41,27 @@ class Book {
     localStorage.setItem('storedData', JSON.stringify(storedData));
   }
 }
-
 const initialLoad = () => {
-  const storedData = JSON.parse(localStorage.getItem('storedData')) || [];
+  const storedData = JSON.parse(localStorage.getItem('storedData'));
   if (storedData) {
     storedData.forEach((book) => {
       const newBook = new Book(book.title, book.author, book.id);
       newBook.add();
     });
+  } else {
+    const data = [
+      {
+        title: 'The Lord of the Rings',
+        author: 'J.R.R. Tolkien',
+      },
+      {
+        title: 'Harry Potter',
+        author: 'J.K. Rowling',
+      },
+      {
+        title: 'Rich Dad Poor Dad',
+        author: 'Robert Kiyosaki',
+      },
+    ];
+    localStorage.setItem('storedData', JSON.stringify(data));
   }
-  localStorage.setItem('storedData', JSON.stringify(storedData));
-  const addBtn = document.getElementById('addBtn');
-  addBtn.addEventListener('click', () => {
-    const bookTitle = document.getElementById('title').value;
-    const bookAuthor = document.getElementById('author').value;
-    const book = new Book(bookTitle, bookAuthor);
-    book.add();
-  });
-};
-initialLoad();
