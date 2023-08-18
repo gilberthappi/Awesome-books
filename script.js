@@ -41,7 +41,6 @@ class Book {
       localStorage.setItem('storedData', JSON.stringify(storedData));
     }
   }
-  const initialLoad = () => {
     const storedData = JSON.parse(localStorage.getItem('storedData'));
     if (storedData) {
       storedData.forEach((book) => {
