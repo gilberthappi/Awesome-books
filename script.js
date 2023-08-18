@@ -44,4 +44,22 @@ class Book {
     localStorage.setItem('storedData', JSON.stringify(storedData));
   }
 }
-// Add code here
+
+const initialLoad = () => {
+  const storedData = JSON.parse(localStorage.getItem('storedData')) || [];
+  if (storedData) {
+    storedData.forEach((book) => {
+      const newBook = new Book(book.title, book.author, book.id);
+      newBook.add();
+    });
+  }
+  localStorage.setItem('storedData', JSON.stringify(storedData));
+  const addBtn = document.getElementById('addBtn');
+  addBtn.addEventListener('click', () => {
+    const bookTitle = document.getElementById('title').value;
+    const bookAuthor = document.getElementById('author').value;
+    const book = new Book(bookTitle, bookAuthor);
+    book.add();
+  });
+};
+initialLoad()
