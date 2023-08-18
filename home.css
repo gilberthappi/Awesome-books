@@ -6,25 +6,31 @@
 
 .container {
   font-family: 'Lato', sans-serif;
-  width: 60%;
   margin: auto;
   padding: 30px;
   margin-top: 20px;
-  border: 1px solid gray;
   text-align: center;
 }
 
 .booksCont {
   width: 60%;
   margin: 20px auto;
-  border: 1px solid gray;
+  border-style: solid;
+}
+
+.booksCont > :nth-child(even) {
+  background-color: darkgrey;
+}
+
+.booksCont > :nth-child(odd) {
+  background-color: lightgrey;
 }
 
 .book {
   padding: 0 40px;
   padding-top: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
 }
 
@@ -39,11 +45,12 @@
 }
 
 .removeBtn {
-  width: 50%;
-  margin: 0 auto;
-  padding: 5px 0;
+  box-shadow: 2px 3px;
+  padding: 2px;
   font-size: 0.9em;
   font-weight: bold;
+  margin-left: auto;
+  background-color: white;
 }
 
 .addBook {
@@ -56,12 +63,14 @@
 
 input {
   padding: 3px;
+  border-style: solid;
 }
 
 #addBtn {
-  width: 35%;
-  margin: 0 auto;
-  padding: 5px 0;
+  padding: 5px;
   font-size: 0.9em;
   font-weight: bold;
+  margin-left: auto;
+  border-style: solid;
+  box-shadow: 2px 3px;
 }
