@@ -26,7 +26,6 @@
   background-color: lightgrey;
 }
 
-
 .book {
   padding: 0 40px;
   padding-top: 10px;
@@ -46,7 +45,7 @@
 }
 
 .removeBtn {
-  box-shadow: 2px 3px 0px 0;
+  box-shadow: 2px 3px;
   padding: 2px;
   font-size: 0.9em;
   font-weight: bold;
